@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node --presets es2015",
+    "start": "nodemon --exec npm run babel-node -- ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefani-nik/mern-bookster.git"
+  },
+  "keywords": [
+    "Node",
+    "JS",
+    "Server"
+  ],
+  "author": "stefani-nik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefani-nik/mern-bookster/issues"
+  },
+  "homepage": "https://github.com/stefani-nik/mern-bookster#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "mongoose": "^5.0.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.15.1"
+  }
+}
