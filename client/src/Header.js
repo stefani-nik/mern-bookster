@@ -6,6 +6,7 @@ const Header = ({title}) => {
          <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">{title}</h1>
+          <a href="http://">Link</a>
         </header>
         );
 }
