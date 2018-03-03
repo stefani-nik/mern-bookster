@@ -9,7 +9,7 @@ class App extends Component {
         return (
 
             <div className = "App" >
-                <Header title = "Stefcheto"/>
+                <Header title = "Bookster"/>
                 <p className = "App-intro">To get started, edit <code> src / App.js </code> and save to reload.</p> 
                 <Footer/>
             </div>

@@ -2,17 +2,16 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('../images/jumbotron.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
   padding: 20px;
   color: white;
 }
+
 
 .App-title {
   font-size: 1.5em;
@@ -22,7 +21,26 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.app-title{
+  color: white; 
+  font-family: 'Helvetica Neue', sans-serif; 
+  font-size: 175px; 
+  font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1; 
+  text-align: left;
+  -webkit-margin-after: 0.1em;
+}
+
+.app-subtitle{
+   color: white; 
+   font-family: 'Open Sans', sans-serif; 
+   font-size: 30px; 
+   font-weight: 300;
+   line-height: 32px; 
+   text-align: left; 
+}
+
+a:link, a:visited, a:active, a:hover{
+  text-decoration: none;
 }
