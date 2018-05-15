@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect} from 'react-router-dom';
-import './Layout.css'
+import './layout.css'
 
 const Layout = () => (
     <main className='layout'>

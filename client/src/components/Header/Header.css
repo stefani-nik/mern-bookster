@@ -1,0 +1,9 @@
+.app-header{
+    height: 200px;
+    background-image: url('../../images/header-bg.jpg');
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
