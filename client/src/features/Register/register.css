@@ -1,0 +1,11 @@
+.register-form{
+    height: 100%;
+    margin: 50px;
+}
+.register-form div{
+    padding-top: 15px;
+}
+
+.register-form button{
+    margin-top: 15px !important;
+}
