@@ -1,5 +1,6 @@
 import React from 'react'
 import Featured from './components/Featured/Featured'
+import PopularPost from './components/PopularPost/PopularPost'
 
 class Home extends React.Component{
 
@@ -9,7 +10,10 @@ class Home extends React.Component{
 
     render(){
         return(
-            <Featured />
+            <div>
+                <Featured />
+                <PopularPost />
+            </div>
         );
     }
 }

@@ -1,0 +1,227 @@
+.ui.huge.header{
+    font-size: 3.0rem !important;
+}
+
+.masonry-wrap {
+    max-width: none;
+    width: 1440px;
+    overflow: hidden;
+    margin: 50px;
+}
+
+.masonry {
+    margin-bottom: 3rem;
+}
+
+.masonry:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.masonry .masonry-brick {
+    width: 280px;
+}
+
+.masonry-brick {
+    float: left;
+    padding: 0 20px;
+    border: 1px solid darkgray;
+}
+
+.masonry .entry {
+    margin-bottom: 40px;
+}
+
+
+.masonry .brick-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.masonry .brick-thumb-link img {
+    margin: 0 auto;
+    vertical-align: bottom;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.masonry .brick-thumb-link::before {
+    content: "";
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.masonry .brick-thumb-link::after {
+    content: "...";
+    font-family: georgia, serif;
+    font-size: 0.7rem;
+    z-index: 1;
+    display: block;
+    height: 90px;
+    width: 90px;
+    letter-spacing: -1px;
+    line-height: 90px;
+    margin-left: -45px;
+    margin-top: -45px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+.masonry .brick-thumb:hover .brick-thumb-link img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.masonry .brick-text {
+    padding: 0.5rem 0.5rem 0.5rem;
+    background-color: #FFFFFF;
+}
+
+.masonry .brick-title {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.375;
+    margin-top: 0;
+    margin-bottom: 2.1rem;
+}
+
+.masonry .brick-title a {
+    color: #000000;
+    border-bottom: 1px solid transparent;
+}
+
+.masonry .brick-title a:hover,
+.masonry .brick-title a:focus {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.masonry .brick-date {
+    font-family: "metropolis-medium", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.714;
+    margin-bottom: .6rem;
+}
+
+.masonry .brick-date a {
+    color: #858585;
+}
+
+.masonry .brick-description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.masonry .entry-meta {
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.masonry .entry-btn{ 
+    text-align: center;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
+}
+
+
+.masonry .entry-meta-links a::after {
+    content: ", ";
+}
+
+.masonry .entry-meta-links a:last-child::after {
+    display: none;
+}
+
+
+@media only screen and (max-width:1480px) {
+    .masonry-wrap {
+        width: 1080px;
+    }
+}
+
+@media only screen and (max-width:1140px) {
+    .masonry-wrap {
+        width: 1020px;
+    }
+    .masonry,
+    .masonry .masonry-brick {
+        width: 340px;
+    }
+}
+
+@media only screen and (max-width:1060px) {
+    .masonry-wrap {
+        width: 740px;
+    }
+    .masonry,
+    .masonry .masonry-brick {
+        width: 370px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .masonry-wrap {
+        max-width: 700px;
+        width: 90%;
+    }
+    .masonry,
+    .masonry .masonry-brick {
+        width: 50%;
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .masonry-wrap {
+        max-width: 400px;
+    }
+    .masonry,
+    .masonry .masonry-brick {
+        width: 100%;
+        clear: both;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .masonry-wrap {
+        width: auto;
+    }
+    .masonry,
+    .masonry .masonry-brick {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .masonry .masonry-brick {
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+}

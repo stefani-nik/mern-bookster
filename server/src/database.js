@@ -1,13 +1,10 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
-const connection = 'mongodb://localhost/bookster';
+const connection = 'mongodb+srv://stef:stefi0904@cluster0-nlxs0.mongodb.net/test?retryWrites=true';
 
+mongoose.connect(connection);
 mongoose.Promise = global.Promise;
 
-export const db = (()=> {
-    mongoose.connect(connection)
-    .then(() => {
-        console.log('Mongo is running');
-    })
-    .catch(console.log);
-})();
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB error:'));

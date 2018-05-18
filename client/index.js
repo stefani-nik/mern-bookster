@@ -6,7 +6,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import {BrowserRouter} from 'react-router-dom';
 import configureStore from './store/configureStore';
 import App from './containers/App';
-import registerServiceWorker from './utils/registerServiceWorker';
+// import registerServiceWorker from './utils/registerServiceWorker';
 
 const store = configureStore();
 const history = syncHistoryWithStore(createBrowserHistory(), store);
@@ -17,4 +17,4 @@ ReactDOM.render(
             <App />
         </BrowserRouter>
     </Provider>, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
