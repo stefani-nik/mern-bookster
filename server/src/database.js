@@ -1,10 +1,12 @@
-var mongoose = require('mongoose');
+import mongoose from 'mongoose';
+const connection = 'mongodb://localhost/bookster';
 
-const connection = 'mongodb+srv://stef:stefi0904@cluster0-nlxs0.mongodb.net/test?retryWrites=true';
-
-mongoose.connect(connection);
 mongoose.Promise = global.Promise;
 
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'MongoDB error:'));
+export const db = (() => {
+    mongoose.connect(connection)
+        .then(() => {
+            console.log('Mongoose is up and ready!')
+        })
+        .catch(console.log);
+})();

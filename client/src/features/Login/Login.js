@@ -9,6 +9,12 @@ class Login extends React.Component {
         super();
     }
 
+    state = {
+        response: ''
+    };
+
+    
+
     render() {
         return(
             <Form className='login-form'>
