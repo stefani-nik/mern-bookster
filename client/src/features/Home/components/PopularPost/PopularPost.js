@@ -1,48 +1,42 @@
-import React from 'react'
-import { Divider, Image, Header, Rating, Button } from 'semantic-ui-react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Image, Rating, Button, Divider } from 'semantic-ui-react';
 
 import './popularPost.css'
 
-class PopularPost extends React.Component{
-    constructor(){
-        super();
-    }
+const PopularPost = (props) => {
 
-    render(){
         return(
-            <div> 
-                <Header size='huge' textAlign='center'>What will you find?</Header>
-                <Divider />
-            <div className="masonry-wrap">
-            <div className="masonry">
-
                 <article className="masonry-brick entry format-standard">
                     <div className="brick-thumb">
-                        <a href="post.html" class="brick-thumb-link">
-                            <Image src="https://i.pinimg.com/736x/88/c2/5e/88c25eb20dd750d70384937dbf55a4d2--travel-books-classic-books.jpg" alt="" size="small" aligned="center"/>
+                        <a href="post.html" className="brick-thumb-link">
+                            <Image src={props.imageUrl} alt="" size="small" aligned="center"/>
                             <Divider hidden />
                         </a>
                     </div>
 
                     <div className="brick-text">
-                        <div class="brick-header">
+                        <div className="brick-header">
                             <h1 className="brick-title">
-                                <a href="post.html">On the Road <br/> by <i>Duluoz Legend </i></a>
+                                <a href="post.html">{props.title}<br/> by <i>{props.author}</i></a>
                             </h1>
                         </div>
                         <div className="entry-meta">
-                         <Rating maxRating={5} defaultRating={3} icon='star' disabled/>
+                         <Rating maxRating={5} defaultRating={props.rating} icon='star' disabled/>
                         </div>
                         <div className="entry-btn">
                             <Button secondary>Learn More</Button>
                         </div>
                     </div>
                 </article>
-            </div>
-        </div>
-        </div>
         )
-    }
-}
+};
+
+PopularPost.propTypes = {
+    title: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired
+};
 
 export default PopularPost;

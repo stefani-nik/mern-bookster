@@ -12,7 +12,7 @@ accountRouter.post('/register', AccountController.register);
 
 accountRouter.post('/login', AccountController.login, generateRefreshToken, generateAccessToken, sendTokens);
 
-accountRouter.post('/logout', passport.authenticate('jwt', {session: false}), createInvalidToken, AccountController.logout);
+accountRouter.get('/logout', AccountController.logout);
 
 accountRouter.post('/token', validateRefreshToken, generateAccessToken, sendTokens);
 

@@ -9,3 +9,8 @@
 .register-form button{
     margin-top: 15px !important;
 }
+
+.form-err{
+    color: red;
+    font-size: 1.2rem;
+}

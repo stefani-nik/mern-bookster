@@ -1,41 +1,59 @@
 import React from 'react'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from './actions/home';
 import Featured from './components/Featured/Featured'
-import PopularPost from './components/PopularPost/PopularPost'
+import PopularPostsList from './components/PopularPost/PopularPostsList'
+import NewPostsList from './components/NewPost/NewPostsList';
+import axios from 'axios';
+import { Loader } from 'semantic-ui-react';
+
 
 class Home extends React.Component{
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
     }
 
-    state = {
-        response: ''
-      };
-    
-      componentDidMount() {
-        this.callApi()
-          .then(res => this.setState({ response: res.message }))
-          .catch(err => console.log(err));
-      }
-    
-      callApi = async () => {
-        const response = await fetch('/api/home');
-        const body = await response.json();
-    
-        if (response.status !== 200) throw Error(body.message);
-    
-        return body;
-      };
+    componentDidMount(){
+        this.props.actions.getTrendingPosts();
+        this.props.actions.getPopularPosts();
+        this.props.actions.getNewPosts();
+    }
 
     render(){
+        if(!this.props.popular)
+        {
+            return(
+              <Loader/>
+            )
+        }
+       // debugger
         return(
+
             <div>
-                <p>{this.state.response}</p>
+                <p></p>
                 <Featured />
-                <PopularPost />
+                <PopularPostsList posts={this.props.popular}/>
+                <NewPostsList posts={this.props.newPosts}/>
             </div>
         );
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => (
+    {
+        trending: state.home.trending,
+        popular: state.home.popular,
+        newPosts: state.home.newPosts
+    }
+);
+
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

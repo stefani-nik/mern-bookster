@@ -1,10 +1,12 @@
 import Post from '../models/post.model';
 import User from '../models/user.model';
 import Comment from '../models/comment.model';
+import * as UserService from '../services/userService'
 
-export const createComment = (req, res) => {
+export const createComment = async (req, res) => {
+
     const commentInfo = {
-        author: req.body.author,
+        author:  await UserService.getByUsername(req.body.author).exec(),
         content: req.body.content
     };
 
@@ -27,4 +29,8 @@ export const createComment = (req, res) => {
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
+};
+
+export const deleteComment = async (req, res) => {
+
 };

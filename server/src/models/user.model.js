@@ -29,14 +29,6 @@ const user = mongoose.Schema({
             message: 'Password must be at least 5 characters long.'
         }
     },
-    confirmPassword: {
-        type: String, 
-        required: true, 
-        validate: {
-            validator:(value) => (value.length > 4),
-            message: 'Password must be at least 5 characters long.'
-        }
-    },
     readPosts: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -50,6 +42,12 @@ const user = mongoose.Schema({
         }
     ],
     wantToReadPosts: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Post'
+        }
+    ],
+    ratedPosts: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Post'

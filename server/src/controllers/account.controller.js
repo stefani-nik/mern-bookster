@@ -41,6 +41,7 @@ export const login = (req, res, next) => {
 };
 
 export const logout = (req, res) => {
-    res.json({message: 'Logout successful!'});
+    req.logout();
+    res.redirect('/');
 };
 

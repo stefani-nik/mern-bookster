@@ -1,5 +1,7 @@
-const PostType = Object.freeze({
-    Book: Symbol("book"),
-    Magazine: Symbol("magazine"),
-    Article: Symbol("article")
-});
+import { Enum } from 'enumify'
+
+class PostType extends Enum {}
+
+PostType.initEnum(['Book', 'Magazine', 'Article']);
+
+export default PostType;

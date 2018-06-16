@@ -19,30 +19,32 @@ const post = mongoose.Schema({
         }
     },
     postType: {
-        type : PostType,
+        type : String,
         isRequired: true
     },
     author: {
-        type: String,
+        type : String,
         isRequired: true
     },
     date: {
         type: Date, 
         default: Date.now
     },
-    imagePath: {
-        type: String ,
-        isRequired: true
-    },
-    imageContentType: {
-        type: String , 
+    imageUrl: {
+        type: String,
         isRequired: true
     },
     rating: {
-        type: Number
+        type: Number,
+        isRequired: true
     },
     ratesCount: {
-        type: Number
+        type: Number,
+        isRequired : true
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'Category' 
     },
     comments: [
         {

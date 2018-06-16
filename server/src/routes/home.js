@@ -4,6 +4,6 @@ import * as HomeController from '../controllers/home.controller';
 
 const homeRouter = new Router();
 
-homeRouter.get('/', HomeController.sayHello);
+homeRouter.get('/', HomeController.index);
 
 export default homeRouter;

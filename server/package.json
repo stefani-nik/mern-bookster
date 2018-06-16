@@ -25,6 +25,7 @@
   "homepage": "https://github.com/stefani-nik/mern-bookster#readme",
   "dependencies": {
     "crypto": "^1.0.1",
+    "enumify": "^1.0.4",
     "express": "^4.16.2",
     "formidable": "^1.2.1",
     "jsonwebtoken": "^8.2.1",

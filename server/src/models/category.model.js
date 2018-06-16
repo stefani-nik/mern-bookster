@@ -7,7 +7,7 @@ const category = mongoose.Schema({
         isRequired: true
     },
     categoryType: {
-        type: CategoryType,
+        type: String,
         isRequired: true
     },
     posts: [

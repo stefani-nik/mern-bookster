@@ -1,10 +1,12 @@
 import User from '../models/user.model';
 import InvalidToken from '../models/invalidToken.model';
+import jwt from 'jsonwebtoken';
+import passport from 'passport';
 import {Strategy, ExtractJwt} from 'passport-jwt';
 
 let options = {};
 
-options.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
+options.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("Bearer");
 options.secretOrKey = 'secret';
 
 const configPassport = passport => {
@@ -31,7 +33,8 @@ const configPassport = passport => {
                     })
             })
             .catch(console.log);
-    }));
+    }
+));
 
     passport.serializeUser((user, done) => {
         done(null, user._id)
