@@ -10,7 +10,7 @@ import MagazinesDropdown from './Magazines/MagazinesDropdown'
 export default class NavBar extends React.Component {
 
   state = { 
-    activeItem: 'home'
+    activeItem: 'home',
   };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -18,6 +18,7 @@ export default class NavBar extends React.Component {
   render() {
     const { activeItem } = this.state
     const isLoggedIn = localStorage.hasOwnProperty('accessToken');
+    const profileNavigation = '/profile/' + localStorage.getItem('user');
   
     return (
       <div>
@@ -43,7 +44,9 @@ export default class NavBar extends React.Component {
             <Menu.Item name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }}>
               <NavListItem role='Logout' navigation='/logout'></NavListItem>
             </Menu.Item>
-            <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick} />
+            <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}>
+                <NavListItem role='Profile' navigation={profileNavigation}></NavListItem>
+            </Menu.Item>
              <Menu.Item name='login' active={activeItem === 'login'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}> 
                <NavListItem role='Login' navigation='/login'></NavListItem>
             </Menu.Item> 

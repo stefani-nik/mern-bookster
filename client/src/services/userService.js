@@ -14,7 +14,7 @@ class UserService {
 
     static updateUserInfo(username, params){
         axios.post(baseUrlUser + '/profile/' + username, params)
-        .then(res => console.log(res))
+        .then(res => res)
         .catch(err => console.log(err))
     }
 

@@ -21,7 +21,8 @@ const initialState = {
     allArticles : [],
     articlesByCategory : [],
     articleDetails : null,
-
+    userInfo : null,
+    updatedProfile : null
 }
 
 export default initialState;

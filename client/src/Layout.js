@@ -11,7 +11,8 @@ import BookDetails from './features/Book/components/Details/BookDetails'
 import ArticleDetails from './features/Article/components/Details/ArticleDetails'
 import MagazineDetails from './features/Magazine/components/Details/MagazineDetails'
 import BooksByCategory from './features/Book/components/Category/BooksByCategory';
-import './layout.css'
+import UserProfile from './features/Profile/UserProfile';
+import './layout.css';
 
 const Layout = () => (
     <main className='layout'>
@@ -32,6 +33,7 @@ const Layout = () => (
             <Route path='/articles/:id' exact component={ArticleDetails} />
             <Route path='/magazines/:id' exact component={MagazineDetails} />
             <Route path='/category/book/:id' exact component={BooksByCategory} />
+            <Route path='/profile/:username' exact component={UserProfile} />
          
         </Switch>
     </main>
