@@ -13,26 +13,19 @@ class BooksDropdown extends React.Component{
         super(props);
     }
 
-   
     componentDidMount(){
         this.props.actions.getBookCategories();
     }
 
     render(){
-        // const options = this.props.bookCategories.map((c,i) => {
-        //     return { key: i, text: c.name, value: c.name}
-        // });
-        console.log(this.props.bookCategories);
         return(
-            <Dropdown text="" item>
+            
                 <Dropdown.Menu>
                 {
                     this.props.bookCategories.map((c,i) =>
-
-                        <Dropdown.Item as={Link} name={c.name} to={c.detailsNavigation}>{c.name}</Dropdown.Item>
+                        <Dropdown.Item as={Link} name={c.name} to={c.detailsNavigation} item>{c.name}</Dropdown.Item>
                     )}
                 </Dropdown.Menu>
-            </Dropdown>
         );
     }
 }

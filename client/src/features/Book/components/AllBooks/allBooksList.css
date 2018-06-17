@@ -1,0 +1,30 @@
+.all-books-wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.allbook-title{
+    content:" "; 
+    display:inline-block; 
+    height:100%; 
+    vertical-align:middle;
+}
+.allbook-title{
+    width: 70%;
+    font-size: 20px;
+}
+
+.allbook-title p{
+    margin-top: 3.0rem !important;
+}
+
+.introduce{
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.page-title{
+    padding-top: 1.0rem !important;
+    padding-bottom: 1.0rem !important;
+    background-color: #f5f5f5;
+}

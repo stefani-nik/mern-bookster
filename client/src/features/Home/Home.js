@@ -22,17 +22,15 @@ class Home extends React.Component{
     }
 
     render(){
-        if(!this.props.popular)
+        if(!this.props.popular || !this.props.newPosts)
         {
             return(
               <Loader/>
             )
         }
-       // debugger
         return(
 
             <div>
-                <p></p>
                 <Featured />
                 <PopularPostsList posts={this.props.popular}/>
                 <NewPostsList posts={this.props.newPosts}/>

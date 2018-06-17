@@ -2,7 +2,7 @@
     font-size: 3.0rem !important;
 }
 
-.popular-posts-wrapper{
+.new-posts-wrapper{
     width: 80%;
     margin: 0 auto;
     text-align: center;
@@ -18,11 +18,15 @@
     font-size: 18px;
 }
 
-.book-rating{
-    margin-top: 2.0rem;
-    margin-bottom: 0.5rem;
+.date-tag{
+    margin-top: 2.0rem !important;
+    margin-bottom: 1.0rem !important;
 }
 
 .learn-more-btn{
     width: 100% !important;
+}
+
+.title-divider{
+    margin-bottom: 2.0rem !important;
 }

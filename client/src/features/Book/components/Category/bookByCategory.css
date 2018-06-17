@@ -1,0 +1,17 @@
+.books-category-wrapper{
+    width: 70%;
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+.book-by-category{
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem  !important;
+}
+
+.entry-description{
+    width: 75% !important;
+    text-align: left !important;
+    margin: 0 auto !important;
+    padding-top: 1.0rem !important;
+}

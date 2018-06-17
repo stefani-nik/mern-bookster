@@ -31,16 +31,15 @@ class Register extends React.Component {
     
       onSubmit = (e) => {          
         e.preventDefault();
-
+        console.log("I am here");
         if(Object.values(this.errors).every(x => (x === null || x === '')))
         {
             const { username, email, password, confirmPassword } = this.state;
         
             axios.post('/api/account/register', { username, email , password })
               .then((res) => {
-                  console.log(res);
-                localStorage.setItem('username', res.data.username);
-                this.props.history.push("/");
+                console.log(res);
+                this.props.history.push("/login");
               });
         }   
       }

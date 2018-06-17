@@ -51,7 +51,6 @@ export function getNewPosts() {
         HomeService.getPostsCollections()
             .then(res => {
                 const newPosts = Utils.parseNewPosts(res.newPosts);
-                console.log(newPosts);
                 dispatch(loadNewPosts(newPosts));
             })
             .catch(err => console.log(err));

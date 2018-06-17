@@ -20,14 +20,14 @@ class BookModelsParser{
         return res.map(a => {
             let imageUrl = a.imageUrl == null ? defaultCoverUrl : a.imageUrl;
             let detailsNavigation = `books/${a._id}`;
-            return new BookByCategoryModel(a.title, a.author, imageUrl, a._id, a.rating, detailsNavigation);
+            return new BookByCategoryModel(a.title, a.author, a.content, imageUrl, a._id, a.rating, detailsNavigation);
         });
     }
 
     static parseBookDetails(res){
             let imageUrl = res.imageUrl == null ? defaultCoverUrl : res.imageUrl;
             let detailsNavigation = `books/${res._id}`;
-            return new BookDetailsModel(res.title, res.author, res.content, res.date,  imageUrl, res.rating, res.ratesCount, res.category, res.comments, res._id, detailsNavigation);
+            return new BookDetailsModel(res.title, res.content, res.author, res.date,  imageUrl, res.rating, res.ratesCount, res.category, res.comments, res._id, detailsNavigation);
     }
 }
 

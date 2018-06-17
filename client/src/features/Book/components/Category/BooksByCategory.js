@@ -4,7 +4,8 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../../actions/book';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import { Loader, Divider, Image } from 'semantic-ui-react';
+import { Loader, Divider, Image, Header, Item } from 'semantic-ui-react';
+import './bookByCategory.css'
 
 
 class BooksByCategory extends React.Component{
@@ -30,25 +31,28 @@ class BooksByCategory extends React.Component{
         return(
 
             <div>
+                <Divider/>
+                <Header size='huge' textAlign='center' className='page-title'>Books in category: </Header>
+                <Divider/>
+
+                <Item.Group className='books-category-wrapper'>
                   {
                   books.map((b, i) =>
-                    <article className="masonry-brick entry format-standard">
-                    <div className="brick-thumb">
-                        <Link to={b.detailsNavigation} className="brick-thumb-link">
-                            <Image src={b.imageUrl} alt="" size="small" aligned="center"/>
-                        </Link>
-                    <Divider hidden />
-                </div>
-
-                <div className="brick-text">
-                    <div className="brick-header">
-                        <h1 className="brick-title">
-                            <Link to={b.detailsNavigation}>{b.title}<br/> by <i>{b.author}</i></Link>
-                        </h1>
-                    </div>
-                </div>
-                </article>
+                <Item className='book-by-category' >
+                <Link to={b.detailsNavigation} className='entry-image'>
+                  <Item.Image size='tiny' src={b.imageUrl} rounded />
+                </Link>
+                  <Item.Content>
+                    <Item.Header as={Link} to={b.detailsNavigation}>{b.title} <br/>  {b.author}</Item.Header>
+                    <Item.Description className='entry-description'>
+                        {b.content.substring(0, 300)}...
+                    </Item.Description>
+                    <Item.Extra>Rating:  {b.rating}</Item.Extra>
+                  </Item.Content>
+                  <Divider/>
+                </Item>
                   )}
+                </Item.Group>
             </div>
         );
     }

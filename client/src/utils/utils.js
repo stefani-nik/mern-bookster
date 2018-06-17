@@ -22,19 +22,21 @@ class Utils {
             let author = a.author
             let imageUrl = a.imageUrl == null ? defaultCoverUrl : a.imageUrl;
             let rating = a.rating;
-             //let detailsNavigation = `/user/${a.owner.id}/playlist/${a.id}`;
-            return new PopularPostModel(title, author, imageUrl, a.id, rating);
+            let detailsNavigation = `books/${a._id}`;
+            let id = a._id;
+            return new PopularPostModel(title, author, imageUrl, id, rating, detailsNavigation);
         });
     }
 
     static parseNewPosts(res) {
+        console.log("DATE" + res[0].date);
         return res.map(a => {
             let title = a.title;
             let author = a.author
             let imageUrl = a.imageUrl == null ? defaultCoverUrl : a.imageUrl;
-            let date = a.date;
-            //let detailsNavigation = `/user/${a.owner.id}/playlist/${a.id}`;
-            return new NewPostModel(title, author, imageUrl, a.id, date);
+            let detailsNavigation = `books/${a._id}`;
+            let id = a._id;
+            return new NewPostModel(title, author, imageUrl, id, a.date, detailsNavigation);
         });
     }
 }

@@ -39,7 +39,6 @@ export function getBooksByCategory(categoryId) {
     return dispatch => {
         BookService.getBooksByCategory(categoryId)
             .then(res => {
-                console.log(res);
                 const booksByCategory = BookModelsParser.parseBookByCategory(res);
                 dispatch(loadBooksByCategory(booksByCategory));
             })

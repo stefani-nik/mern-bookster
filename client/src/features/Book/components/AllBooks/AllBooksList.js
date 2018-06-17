@@ -1,30 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Header, Divider, Image } from 'semantic-ui-react'
+import { Header, Divider, Image, Grid, Reveal} from 'semantic-ui-react'
+import './allBooksList.css'
 
 const AllBooksList = ({books}) => {
     return (
-        <div>
+        <div className='all-books-wrapper'>
+            <Divider/>
+            <Header size='huge' textAlign='center' className='page-title'>All Books</Header>
+            <Divider/>
+            <Grid relaxed columns={6} divided>
               {
                   books.map((b, i) =>
-        <article className="masonry-brick entry format-standard">
-        <div className="brick-thumb">
-            <Link to={b.detailsNavigation} className="brick-thumb-link">
-                <Image src={b.imageUrl} alt="" size="small" aligned="center"/>
-            </Link>
-            <Divider hidden />
-        </div>
-
-        <div className="brick-text">
-            <div className="brick-header">
-                <h1 className="brick-title">
-                    <Link to={b.detailsNavigation}>{b.title}<br/> by <i>{b.author}</i></Link>
-                </h1>
-            </div>
-        </div>
-        </article>
+                <Grid.Column>
+                    <Reveal animated='move'>
+                    <Reveal.Content visible>
+                        <Link to={b.detailsNavigation} centered>
+                            <Image src={b.imageUrl} alt="" size="small" centered rounded bordered/>
+                        </Link>
+                    </Reveal.Content>
+                    <Reveal.Content hidden>
+                    <div class='allbook-title'>
+                        <Link to={b.detailsNavigation} centered>
+                            <p><b className='introduce'>Title:</b> <br/>{b.title}</p>
+                        </Link>
+                    </div>
+                    </Reveal.Content>
+                  </Reveal>
+                </Grid.Column>
                   )}
+            </Grid>
         </div>
     )
 };

@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import {Link} from 'react-router-dom';
-import { Menu, Segment } from 'semantic-ui-react';
-import NavListItem  from './NavListItem';
+import { Menu, Segment, Dropdown } from 'semantic-ui-react';
 import ArticlesDropdown from './Articles/ArticlesDropdown';
 import BooksDropdown from './Books/BooksDropdown'
 import MagazinesDropdown from './Magazines/MagazinesDropdown'
@@ -23,36 +22,19 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Menu inverted pointing secondary  size='large' className='navbar-list'>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
-            <NavListItem role='Home' navigation='/'></NavListItem>
-          </Menu.Item>
-          <Menu.Item name='books' active={activeItem === 'books'} onClick={this.handleItemClick}>
-              <NavListItem role='Books' navigation='/books'>
-              </NavListItem>
-              <BooksDropdown />
-          </Menu.Item>
-          <Menu.Item name='magazines' active={activeItem === 'magazines'} onClick={this.handleItemClick}>
-                <NavListItem role='Magazines' navigation='/magazines'></NavListItem>
-                <MagazinesDropdown />
-          </Menu.Item>
-          <Menu.Item name='articles' active={activeItem === 'articles'} onClick={this.handleItemClick}>
-                <NavListItem role='Articles' navigation='/articles'>
-                </NavListItem>  
-                <ArticlesDropdown />
-           </Menu.Item>
+          <Menu.Item name='home' role='Home' as = {Link}  to='/' active={activeItem === 'home'} onClick={this.handleItemClick} />
+          {/* <Menu.Item name='books' role='Books' as = {Link}  to='/books' active={activeItem === 'books'} onClick={this.handleItemClick} /> */}
+            <Dropdown text="Books" as={ Link } to='/books' active={activeItem === 'books'} onClick={this.handleItemClick}  simple className='link item' item>
+              <BooksDropdown/>
+            </Dropdown>
+          <MagazinesDropdown />
+          <ArticlesDropdown />
           <Menu.Menu position='right'>
-            <Menu.Item name='logout' active={activeItem === 'logout'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }}>
-              <NavListItem role='Logout' navigation='/logout'></NavListItem>
-            </Menu.Item>
-            <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}>
-                <NavListItem role='Profile' navigation={profileNavigation}></NavListItem>
-            </Menu.Item>
-             <Menu.Item name='login' active={activeItem === 'login'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}> 
-               <NavListItem role='Login' navigation='/login'></NavListItem>
-            </Menu.Item> 
-            <Menu.Item name='register' active={activeItem === 'register'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}>
-                <NavListItem role='Register' navigation='/register'></NavListItem>
-            </Menu.Item>
+            <Menu.Item name='logout' role='Logout' as = {Link} to='/logout' active={activeItem === 'logout'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }} />
+            <Menu.Item name='profile' role='Profile' as = {Link} to={profileNavigation} active={activeItem === 'profile'} onClick={this.handleItemClick}  style={isLoggedIn ? {} : { display: 'none' }}/>
+            <Menu.Item name='collections' role='Collections' as = {Link} to='/collections' active={activeItem === 'collections'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }}/>
+            <Menu.Item name='login' role='Login'  as = {Link} to='/login' active={activeItem === 'login'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}/> 
+            <Menu.Item name='register' role='Register' as = {Link} to='/register' active={activeItem === 'register'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}/>
           </Menu.Menu>
         </Menu>
       </div>
