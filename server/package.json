@@ -5,7 +5,6 @@
   "engines": {
     "node": "8.9.4"
   }
-  "description": "",
   "main": "server.js",
   "scripts": {
     "babel-node": "babel-node --presets es2015",
