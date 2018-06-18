@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../../actions/category';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import { Dropdown, Menu, Loader } from 'semantic-ui-react';
 
 
@@ -18,11 +19,14 @@ class MagazinesDropdown extends React.Component{
     }
 
     render(){
-        const options = this.props.magazineCategories.map((c,i) => {
-            return { key: i, text: c.name, value: c.name}
-        });
+    
         return(
-                <Dropdown text="" options={options} item />
+            <Dropdown.Menu>
+            {
+                this.props.magazineCategories.map((c,i) =>
+                    <Dropdown.Item as={Link} name={c.name} to={c.detailsNavigation} item>{c.name}</Dropdown.Item>
+                )}
+            </Dropdown.Menu>
         );
     }
 }

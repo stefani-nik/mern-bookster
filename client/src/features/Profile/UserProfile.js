@@ -3,7 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/profile';
-import { Button, Form, Message } from 'semantic-ui-react'
+import { Button, Form, Message, Header, Divider } from 'semantic-ui-react'
 import { registerFormValidation } from '../../utils/validation'
 
 
@@ -52,21 +52,26 @@ class UserProfile extends React.Component {
 
 
         return(
+        <div className='forms-wrapper'>
+            <Divider/>
+                <Header size='huge' textAlign='center' className='page-title'>Your Profile</Header>
+            <Divider/>
             <Form className='register-form' onSubmit={this.onSubmit}>
                 <Form.Input label='Username' placeholder={this.props.userInfo.username}  
-                name="username" value={username}  onChange={this.onChange} width={6} required />
+                name="username" value={username}  onChange={this.onChange} width={18} required/>
                 <Form.Input label='Email' placeholder={this.props.userInfo.email}    
-                name="email" value={email}  onChange={this.onChange} width={6} required />
-                <Form.Input label='Change Password' placeholder='Change password'  
-                name="password" value={password}  onChange={this.onChange} width={6} required type='password'/>
-                <Form.Input label='Confirm Password' placeholder='Change password'  
-                name="confirmPassword" value={confirmPassword}  onChange={this.onChange} width={6} required type='password'/>
-            <Button>Submit</Button>
+                name="email" value={email}  onChange={this.onChange} width={18} required />
+                <Form.Input label='Change Password' 
+                name="password" value={password}  onChange={this.onChange} width={18} required type='password'/>
+                <Form.Input label='Confirm Password'
+                name="confirmPassword" value={confirmPassword}  onChange={this.onChange} width={18} required type='password'/>
+            <Button color='blue' fluid>Submit</Button>
             <div className="form-err">{usernameErr}</div>
             <div className="form-err">{emailErr}</div>
             <div className="form-err">{passwordErr}</div>
             <div className="form-err">{confirmPasswordErr}</div>
             </Form>
+        </div>
         )
     }
 }

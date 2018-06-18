@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Button, Form, Message } from 'semantic-ui-react'
-
-import './login.css'
+import { Button, Form, Message, Header, Divider } from 'semantic-ui-react'
 
 class Login extends React.Component {
     constructor() {
@@ -35,13 +33,18 @@ class Login extends React.Component {
     render() {
         const { username, password } = this.state;
         return(
-            <Form className='login-form' onSubmit={this.onSubmit}>
+            <div className='forms-wrapper'>
+            <Divider/>
+                <Header size='huge' textAlign='center' className='page-title'>Login</Header>
+            <Divider/>
+            <Form className='register-form' onSubmit={this.onSubmit}>
                 <Form.Input label='Username' placeholder='Your username' 
-                name="username" value={username}  onChange={this.onChange} width={6} required />
+                name="username" value={username}  onChange={this.onChange} width={18} required />
                 <Form.Input label='Password' placeholder='Your password'
-                name="password" value={password}  onChange={this.onChange}  width={6} required type='password'/>
-            <Button type="submit" >Submit</Button>
+                name="password" value={password}  onChange={this.onChange}  width={18} required type='password'/>
+            <Button type="submit" color='blue' fluid >Login</Button>
             </Form>
+            </div>
         )
     }
 }

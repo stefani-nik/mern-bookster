@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Button, Form, Message } from 'semantic-ui-react'
+import { Button, Form, Message, Header, Divider } from 'semantic-ui-react'
 import { registerFormValidation } from '../../utils/validation'
 
 import './register.css'
@@ -48,21 +48,26 @@ class Register extends React.Component {
         const {username, email, password, confirmPassword} = this.state;
         const {usernameErr, emailErr, passwordErr, confirmPasswordErr} = this.errors;
         return(
+        <div className='forms-wrapper'>
+            <Divider/>
+                <Header size='huge' textAlign='center' className='page-title'>Register</Header>
+            <Divider/>
             <Form className='register-form' onSubmit={this.onSubmit}>
                 <Form.Input label='Username' placeholder='Your username'  
-                name="username" value={username}  onChange={this.onChange} width={6} required />
+                name="username" value={username}  onChange={this.onChange} width={18} required />
                 <Form.Input label='Email' placeholder='Your email'   
-                name="email" value={email}  onChange={this.onChange} width={6} required />
+                name="email" value={email}  onChange={this.onChange} width={18} required />
                 <Form.Input label='Password' placeholder='Your password'  
-                name="password" value={password}  onChange={this.onChange} width={6} required type='password'/>
+                name="password" value={password}  onChange={this.onChange} width={18} required type='password'/>
                 <Form.Input label='Confirm Password' placeholder='Your password'  
-                name="confirmPassword" value={confirmPassword}  onChange={this.onChange} width={6} required type='password'/>
-            <Button>Submit</Button>
+                name="confirmPassword" value={confirmPassword}  onChange={this.onChange} width={18} required type='password'/>
+            <Button color='blue'fluid>Register</Button>
             <div className="form-err">{usernameErr}</div>
             <div className="form-err">{emailErr}</div>
             <div className="form-err">{passwordErr}</div>
             <div className="form-err">{confirmPasswordErr}</div>
             </Form>
+        </div>
         )
     }
 }

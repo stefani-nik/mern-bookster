@@ -1,6 +1,14 @@
+.forms-wrapper{
+    width: 70% !important;
+    margin: 0 auto !important;
+}
 .register-form{
     height: 100%;
-    margin: 50px;
+    width: 50% !important;
+    margin : 0 auto !important;
+}
+.register-form input::-webkit-input-placeholder{
+    color: black !important; 
 }
 .register-form div{
     padding-top: 15px;

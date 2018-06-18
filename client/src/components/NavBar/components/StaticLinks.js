@@ -23,12 +23,15 @@ export default class NavBar extends React.Component {
       <div>
         <Menu inverted pointing secondary  size='large' className='navbar-list'>
           <Menu.Item name='home' role='Home' as = {Link}  to='/' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          {/* <Menu.Item name='books' role='Books' as = {Link}  to='/books' active={activeItem === 'books'} onClick={this.handleItemClick} /> */}
-            <Dropdown text="Books" as={ Link } to='/books' active={activeItem === 'books'} onClick={this.handleItemClick}  simple className='link item' item>
+          <Dropdown text="Books" as={ Link } to='/books' active={activeItem === 'books'} onClick={this.handleItemClick}  simple className='link item' item>
               <BooksDropdown/>
             </Dropdown>
-          <MagazinesDropdown />
-          <ArticlesDropdown />
+            <Dropdown text="Magazines" as={ Link } to='/magazines' active={activeItem === 'magazines'} onClick={this.handleItemClick}  simple className='link item' item>
+              <MagazinesDropdown />
+            </Dropdown>
+            <Dropdown text="Articles" as={ Link } to='/articles' active={activeItem === 'articles'} onClick={this.handleItemClick}  simple className='link item' item>
+              <ArticlesDropdown />
+            </Dropdown>
           <Menu.Menu position='right'>
             <Menu.Item name='logout' role='Logout' as = {Link} to='/logout' active={activeItem === 'logout'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }} />
             <Menu.Item name='profile' role='Profile' as = {Link} to={profileNavigation} active={activeItem === 'profile'} onClick={this.handleItemClick}  style={isLoggedIn ? {} : { display: 'none' }}/>

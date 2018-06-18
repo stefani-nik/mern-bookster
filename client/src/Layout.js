@@ -12,16 +12,12 @@ import ArticleDetails from './features/Article/components/Details/ArticleDetails
 import MagazineDetails from './features/Magazine/components/Details/MagazineDetails'
 import BooksByCategory from './features/Book/components/Category/BooksByCategory';
 import UserProfile from './features/Profile/UserProfile';
+import YourCollections from './features/YourCollections/YourCollections'
 import './layout.css';
 
 const Layout = () => (
     <main className='layout'>
         <Switch>
-            {/* <Route exact path='/' render={() => (
-                localStorage.hasOwnProperty('userId') ?
-                    (<Redirect to='/your-music/playlists'/>) :
-                    (<Redirect to='/login'/>)
-            )}/> */}
             <Route path='/' exact component={Home} />
             <Route path='/books' exact component={Books} />
             <Route path='/magazines' exact component={Magazines} />
@@ -34,6 +30,7 @@ const Layout = () => (
             <Route path='/magazines/:id' exact component={MagazineDetails} />
             <Route path='/category/book/:id' exact component={BooksByCategory} />
             <Route path='/profile/:username' exact component={UserProfile} />
+            <Route path='/collections' exact component={YourCollections} />
          
         </Switch>
     </main>
