@@ -1,9 +1,9 @@
 {
-  "name": "server",
+  "name": "bookster-hci",
   "description": "a really cool app",
   "version": "1.0.0",
   "engines": {
-    "node": "8.9.4"
+    "node": "8.11.3"
   }
   "main": "server.js",
   "scripts": {
