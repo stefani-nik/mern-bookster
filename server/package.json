@@ -1,7 +1,10 @@
 {
-  "name": "server",
+  "name": "bookster-hci",
+  "description": "a really cool app",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "8.11.3"
+  },
   "main": "server.js",
   "scripts": {
     "babel-node": "babel-node --presets es2015",
