@@ -5,6 +5,9 @@ import { Header, Divider, Grid } from 'semantic-ui-react'
 import './popularPost.css'
 
 const PopularPostsList = ({posts}) => {
+    if(posts == null){
+        return null;
+    }
     return (
         <div className='popular-posts-wrapper'> 
           <Divider className='title-divider' horizontal> <Header size='huge' textAlign='center'>Popular Posts</Header> </Divider> 

@@ -2,10 +2,6 @@ import Post from '../models/post.model'
 import { callbackify } from 'util';
 
 
-// TODO
-//export const getTrending = id  => Post
-//.findById({_id: id});
-
 export const getPopular = () => {
     return Post
     .find({})

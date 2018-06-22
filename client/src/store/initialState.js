@@ -4,7 +4,7 @@ const initialState = {
         popular : [],
         newPosts : []
     },
-    user : {
+    userCollections : {
         read : [],
         wantToRead : [],
         currentlyReading : []

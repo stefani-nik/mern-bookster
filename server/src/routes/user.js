@@ -14,5 +14,11 @@ userRouter.get('/toread/:username', UserController.getUserWantToReadPosts);
 
 userRouter.post('/profile/:username', UserController.updateUserInfo);
 
+userRouter.post('/read/:username', UserController.addToReadPosts);
+
+userRouter.post('/reading/:username', UserController.addToCurrentlyReading);
+
+userRouter.post('/toread/:username', UserController.addToWantToRead);
+
 
 export default userRouter;

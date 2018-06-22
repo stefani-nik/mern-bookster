@@ -6,6 +6,7 @@ import magazine from '../features/Magazine/reducers/magazineReducer';
 import article from '../features/Article/reducers/articleReducer';
 import category from '../components/NavBar/reducers/categoriesReducer';
 import profile from '../features/Profile/reducers/profileReducer'
+import user from '../features/YourCollections/reducers/userReducer'
 
 const rootReducer = combineReducers({
     routing,
@@ -14,9 +15,8 @@ const rootReducer = combineReducers({
     magazine,
     article,
     category,
-    profile
-   // bookCategories,
-   // magazineCategories
+    profile,
+    user
 });
 
 export default rootReducer;

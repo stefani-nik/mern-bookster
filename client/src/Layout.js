@@ -30,7 +30,7 @@ const Layout = () => (
             <Route path='/magazines/:id' exact component={MagazineDetails} />
             <Route path='/category/book/:id' exact component={BooksByCategory} />
             <Route path='/profile/:username' exact component={UserProfile} />
-            <Route path='/collections' exact component={YourCollections} />
+            <Route path='/collections/:username' exact component={YourCollections} />
          
         </Switch>
     </main>

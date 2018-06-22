@@ -18,6 +18,7 @@ export default class NavBar extends React.Component {
     const { activeItem } = this.state
     const isLoggedIn = localStorage.hasOwnProperty('accessToken');
     const profileNavigation = '/profile/' + localStorage.getItem('user');
+    const collectionsNavigation = '/collections/' + localStorage.getItem('user');
   
     return (
       <div>
@@ -35,7 +36,7 @@ export default class NavBar extends React.Component {
           <Menu.Menu position='right'>
             <Menu.Item name='logout' role='Logout' as = {Link} to='/logout' active={activeItem === 'logout'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }} />
             <Menu.Item name='profile' role='Profile' as = {Link} to={profileNavigation} active={activeItem === 'profile'} onClick={this.handleItemClick}  style={isLoggedIn ? {} : { display: 'none' }}/>
-            <Menu.Item name='collections' role='Collections' as = {Link} to='/collections' active={activeItem === 'collections'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }}/>
+            <Menu.Item name='collections' role='Collections' as = {Link} to={collectionsNavigation} active={activeItem === 'collections'} onClick={this.handleItemClick} style={isLoggedIn ? {} : { display: 'none' }}/>
             <Menu.Item name='login' role='Login'  as = {Link} to='/login' active={activeItem === 'login'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}/> 
             <Menu.Item name='register' role='Register' as = {Link} to='/register' active={activeItem === 'register'} onClick={this.handleItemClick} style={isLoggedIn ? { display: 'none' } : {}}/>
           </Menu.Menu>
